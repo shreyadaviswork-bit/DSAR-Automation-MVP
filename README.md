@@ -3,7 +3,7 @@ DSAR Automation App
 
 Automate Data Subject Access Requests (DSARs) with Google Sheets and Apps Script.
 
-Overview
+**Overview**
 This project demonstrates a lightweight DSAR automation prototype for GDPR compliance. It allows organizations to:
 
 Capture DSARs from users
@@ -13,11 +13,11 @@ Categorize requests by type (Access, Deletion, Correction)
 
 This is a working prototype that doesn’t require backend hosting, making it ideal for demos or MVPs.
 
-Problem Statement
+**Problem Statement**
 Organizations must respond to DSARs under GDPR within strict timelines. Manual handling of requests can be slow, error-prone, and difficult to track.
 Solution: Automate DSAR handling with Google Sheets + Apps Script to streamline intake, acknowledgment, and tracking.
 
-Key Features
+**Key Features**
 
 DSAR Intake Form: Capture user name, email, and request type.
 Automatic Acknowledgment Emails: Sends confirmation to the user when a request is submitted.
@@ -25,24 +25,41 @@ Request Tracking: Google Sheet stores all requests with status updates.
 Categorization: Requests are labeled as Access, Deletion, or Correction for easier workflow management.
 Automation: Apps Script automatically processes pending requests and updates the sheet.
 
-Tech Stack
+**Tech Stack**
 
 Frontend / Input: Google Forms (optional, linked to Sheets)
 Backend / Processing: Google Apps Script
 Database / Storage: Google Sheets
 Email Automation: Google Apps Script MailApp
 
-| Feature              | Description                                                                               |
-| -------------------- | ----------------------------------------------------------------------------------------- |
-| **Intake Form**      | Google Form collects **Full Name, Email, Request Type** (Access / Deletion / Correction). |
-| **Request Tracking** | Submissions stored in `Requests` sheet with **TicketID, Status, DueDate**.                |
-| **Workflow View**    | Filter view for **New / In Review / Completed** requests.                                 |
-| **Redaction**        | Sensitive fields in CRM/Billing mock data are masked automatically.                       |
-| **Package Delivery** | Generates **JSON + PDF**, zips them, and emails to the requester.                         |
-| **Audit Trail**      | Actions logged in `Audit` tab for compliance and traceability.                            |
+**User stories **
 
+Intake: “As a data subject, I can submit a DSAR with my email and request type so I can exercise my rights.”
+AC: Form required fields; confirmation email sent.
 
-How It Works (Workflow)
+Workflow: “As a compliance officer, I can move a request through New → In Review → Completed to track progress.”
+AC: Status visible in the Requests sheet; DueDate auto-set to +30 days.
+
+Discovery/Collection (simulated): “As a compliance officer, when I complete a request, the system gathers subject data from source systems.”
+AC: Matching rows by Email are included in the package.
+
+Redaction: “As a compliance officer, the output redacts PII.”
+AC: Email masked, names partially masked, phone masked (all but last 2 digits).
+
+Delivery: “As a data subject, I receive a secure data package.”
+AC: Email with ZIP containing PDF + JSON.
+
+Audit: “As a privacy lead, I can see a log of key actions.”
+AC: Audit tab records RequestCreated and PackageSent with timestamps.
+
+8) Success metrics you can claim
+
+Lead time per request (form → delivery) under 1 day (demo).
+Zero manual copy/paste from source tabs (scripted).
+100% auditable (Audit tab entries).
+Basic redaction applied consistently.
+
+**How It Works (Workflow)**
 
 User submits a DSAR via Google Form → Google Sheet
 Apps Script checks for pending requests

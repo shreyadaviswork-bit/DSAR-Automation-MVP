@@ -26,14 +26,15 @@ Database / Storage: Google Sheets
 
 Email Automation: Google Apps Script MailApp
 
-User Stories
-Feature	User Story	Acceptance Criteria (AC)
-Intake	As a data subject, I can submit a DSAR with my email and request type so I can exercise my rights.	Form required fields; confirmation email sent.
-Workflow	As a compliance officer, I can move a request through New → In Review → Completed to track progress.	Status visible in Requests sheet; DueDate auto-set to +30 days.
-Discovery/Collection (simulated)	As a compliance officer, when I complete a request, the system gathers subject data from source systems.	Matching rows by Email are included in the package.
-Redaction	As a compliance officer, the output redacts PII.	Email masked, names partially masked, phone masked (all but last 2 digits).
-Delivery	As a data subject, I receive a secure data package.	Email with ZIP containing PDF + JSON.
-Audit	As a privacy lead, I can see a log of key actions.	Audit tab records RequestCreated and PackageSent with timestamps.
+| Feature                              | User Story                                                                                               | Acceptance Criteria (AC)                                                    |
+| ------------------------------------ | -------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
+| **Intake**                           | As a data subject, I can submit a DSAR with my email and request type so I can exercise my rights.       | Form required fields; confirmation email sent.                              |
+| **Workflow**                         | As a compliance officer, I can move a request through New → In Review → Completed to track progress.     | Status visible in Requests sheet; DueDate auto-set to +30 days.             |
+| **Discovery/Collection (simulated)** | As a compliance officer, when I complete a request, the system gathers subject data from source systems. | Matching rows by Email are included in the package.                         |
+| **Redaction**                        | As a compliance officer, the output redacts PII.                                                         | Email masked, names partially masked, phone masked (all but last 2 digits). |
+| **Delivery**                         | As a data subject, I receive a secure data package.                                                      | Email with ZIP containing PDF + JSON.                                       |
+| **Audit**                            | As a privacy lead, I can see a log of key actions.                                                       | Audit tab records RequestCreated and PackageSent with timestamps.           |
+
 
 **Success Metrics**
 Lead time per request (form → delivery) under 1 day (demo)

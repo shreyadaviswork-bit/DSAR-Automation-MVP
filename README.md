@@ -17,14 +17,6 @@ This is a working prototype that doesn’t require backend hosting, making it id
 Organizations must respond to DSARs under GDPR within strict timelines. Manual handling of requests can be slow, error-prone, and difficult to track.
 Solution: Automate DSAR handling with Google Sheets + Apps Script to streamline intake, acknowledgment, and tracking.
 
-**Key Features**
-
-DSAR Intake Form: Capture user name, email, and request type.
-Automatic Acknowledgment Emails: Sends confirmation to the user when a request is submitted.
-Request Tracking: Google Sheet stores all requests with status updates.
-Categorization: Requests are labeled as Access, Deletion, or Correction for easier workflow management.
-Automation: Apps Script automatically processes pending requests and updates the sheet.
-
 **Tech Stack**
 
 Frontend / Input: Google Forms (optional, linked to Sheets)
@@ -52,12 +44,21 @@ AC: Email with ZIP containing PDF + JSON.
 Audit: “As a privacy lead, I can see a log of key actions.”
 AC: Audit tab records RequestCreated and PackageSent with timestamps.
 
-8) Success metrics you can claim
+**Success metrics **
 
 Lead time per request (form → delivery) under 1 day (demo).
 Zero manual copy/paste from source tabs (scripted).
 100% auditable (Audit tab entries).
 Basic redaction applied consistently.
+
+**Key Features**
+
+DSAR Intake Form: Capture user name, email, and request type.
+Automatic Acknowledgment Emails: Sends confirmation to the user when a request is submitted.
+Request Tracking: Google Sheet stores all requests with status updates.
+Categorization: Requests are labeled as Access, Deletion, or Correction for easier workflow management.
+Automation: Apps Script automatically processes pending requests and updates the sheet.
+
 
 **How It Works (Workflow)**
 
@@ -71,16 +72,15 @@ Requests can be manually or automatically marked Completed
 
 Setup Instructions
 
-Create Google Sheet
-Name: DSAR_MVP\
+1.Create Google Sheet
+Name: DSAR_MVP
 Columns: Timestamp | Name | Email | Request Type | Status | Response Sent
 
-Create Google Form 
-
+2.Create Google Form 
 Fields: Name, Email, Request Type
 Link to the Google Sheet
 
-Add Apps Script
+3.Add Apps Script
 Go to Extensions → Apps Script
 Paste the following code:code.gs and add triggers
   

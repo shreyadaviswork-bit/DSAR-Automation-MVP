@@ -158,8 +158,3 @@ function sendAcknowledgmentEmails() {
 * Provides **audit logs** for compliance verification
 * Demonstrates **end-to-end product thinking**: intake → processing → delivery → compliance
 
----
-
-If you want, I can also **create a professional workflow diagram image** for GitHub and give you the Markdown to embed it in this README. It will make your repo visually polished and presentation-ready.
-
-Do you want me to do that next?

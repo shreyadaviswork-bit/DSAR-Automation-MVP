@@ -1,10 +1,37 @@
 # DSAR-Automation-MVP
-DSAR Automation Platform – Mini Case Study
+DSAR Automation App
+
+Automate Data Subject Access Requests (DSARs) with Google Sheets and Apps Script.
+
 Overview
+This project demonstrates a lightweight DSAR automation prototype for GDPR compliance. It allows organizations to:
 
-This project demonstrates a Data Subject Access Request (DSAR) Automation MVP built using Google Forms, Sheets, Apps Script, Gmail, and Drive.
+Capture DSARs from users
+Automatically send acknowledgment emails
+Track requests in a Google Sheet
+Categorize requests by type (Access, Deletion, Correction)
 
-Objective: Automate the DSAR workflow to comply with GDPR/CPRA, reducing manual effort and ensuring traceability.
+This is a working prototype that doesn’t require backend hosting, making it ideal for demos or MVPs.
+
+Problem Statement
+Organizations must respond to DSARs under GDPR within strict timelines. Manual handling of requests can be slow, error-prone, and difficult to track.
+Solution: Automate DSAR handling with Google Sheets + Apps Script to streamline intake, acknowledgment, and tracking.
+
+Key Features
+
+DSAR Intake Form: Capture user name, email, and request type.
+Automatic Acknowledgment Emails: Sends confirmation to the user when a request is submitted.
+Request Tracking: Google Sheet stores all requests with status updates.
+Categorization: Requests are labeled as Access, Deletion, or Correction for easier workflow management.
+Automation: Apps Script automatically processes pending requests and updates the sheet.
+
+Tech Stack
+
+Frontend / Input: Google Forms (optional, linked to Sheets)
+Backend / Processing: Google Apps Script
+Database / Storage: Google Sheets
+Email Automation: Google Apps Script MailApp
+
 | Feature              | Description                                                                               |
 | -------------------- | ----------------------------------------------------------------------------------------- |
 | **Intake Form**      | Google Form collects **Full Name, Email, Request Type** (Access / Deletion / Correction). |
@@ -15,24 +42,30 @@ Objective: Automate the DSAR workflow to comply with GDPR/CPRA, reducing manual 
 | **Audit Trail**      | Actions logged in `Audit` tab for compliance and traceability.                            |
 
 
-[Google Form Submission] 
-        ↓
-  [Requests Sheet] 
-        ↓
-  [Apps Script Trigger]
-        ↓
-  [Status = Completed?] → Yes → [buildAndSendPackage]
-        ↓
-  [Redact Data from Mock_CRM & Mock_Billing]
-        ↓
-  [Generate JSON + PDF] → [Zip]
-        ↓
-  [Email DSAR Package]
-        ↓
-  [Log Audit]
+How It Works (Workflow)
+
+User submits a DSAR via Google Form → Google Sheet
+Apps Script checks for pending requests
+Script sends an acknowledgment email
+Updates the sheet: Status → Completed, Response Sent → Yes
+Requests can be manually or automatically marked Completed
 
   <img width="1024" height="1536" alt="image" src="https://github.com/user-attachments/assets/e41bd11b-8040-4261-a406-56172f3bd42d" />
 
+Setup Instructions
+
+Create Google Sheet
+Name: DSAR_MVP\
+Columns: Timestamp | Name | Email | Request Type | Status | Response Sent
+
+Create Google Form 
+
+Fields: Name, Email, Request Type
+Link to the Google Sheet
+
+Add Apps Script
+Go to Extensions → Apps Script
+Paste the following code:code.gs and add triggers
   
 **Key Learnings / Impact**
 

@@ -30,6 +30,9 @@ Objective: Automate the DSAR workflow to comply with GDPR/CPRA, reducing manual 
   [Email DSAR Package]
         ↓
   [Log Audit]
+
+  <img width="1024" height="1536" alt="image" src="https://github.com/user-attachments/assets/e41bd11b-8040-4261-a406-56172f3bd42d" />
+
   
 **Key Learnings / Impact**
 

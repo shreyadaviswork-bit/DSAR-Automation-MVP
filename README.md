@@ -45,13 +45,9 @@ Basic redaction applied consistently
 **Key Features**
 
 DSAR Intake Form: Capture user name, email, and request type.
-
 Automatic Acknowledgment Emails: Sends confirmation when a request is submitted.
-
 Request Tracking: Google Sheet stores all requests with status updates.
-
 Categorization: Requests labeled as Access, Deletion, or Correction.
-
 Automation: Apps Script automatically processes pending requests and updates the sheet.
 
 **How It Works (Workflow)**
@@ -72,21 +68,13 @@ Requests can be manually or automatically marked Completed
 Create Google Sheet
 
 Name: DSAR_MVP
-
 Columns: Timestamp | Name | Email | Request Type | Status | Response Sent
-
 Create Google Form
-
 Fields: Name, Email, Request Type
-
 Link Form responses to the Google Sheet
-
 Add Apps Script
-
 Extensions → Apps Script
-
 Paste your code (code.gs)
-
 Add time-driven trigger to process pending requests
 
 **Key Learnings / Impact**

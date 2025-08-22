@@ -1,6 +1,3 @@
-Absolutely! Here's a **fully GitHub-ready README** for your **DSAR Automation MVP**. Everything is formatted in Markdown with proper headings, tables, code blocks, and workflow diagrams. You can directly paste this into your GitHub repo.
-
----
 
 # DSAR-Automation-MVP
 
